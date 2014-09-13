@@ -1,0 +1,12 @@
+# vagrant.yml
+---
+- name: Vagrant/Virtualbox Dev VM
+  hosts: all
+  sudo: yes
+  roles:
+    - common
+    - ruby-2.1
+    - postgresql
+    - redis
+    - nodejs
+    - vagrant-postgresql-config

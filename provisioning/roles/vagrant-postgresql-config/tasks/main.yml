@@ -1,0 +1,12 @@
+---
+ - name: Update postgresql.conf
+   lineinfile: dest=/etc/postgresql/9.3/main/postgresql.conf insertafter="^#listen_addresses " line="listen_addresses='*'"
+ 
+ - name: Loosen up PostgreSQL access control for local development.
+   copy: src={{ item }} dest=/etc/postgresql/9.3/main/{{ item }} owner=postgres group=postgres mode=0640
+   environment: locale_env_vars
+   with_items:
+     - pg_hba.conf
+   notify:
+     - restart postgresql
+   
