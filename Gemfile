@@ -1,24 +1,18 @@
 source 'https://rubygems.org'
 
 # Backend
-gem 'rails', '4.2.0.beta1'
-gem 'pg'
-gem 'rails-html-sanitizer', '~> 1.0'
+gem 'rails', '4.2.1'
+gem 'sqlite3'
 gem 'devise'
-gem 'pundit'
-gem 'carrierwave'
 gem 'dotenv-rails'
 gem 'pry-rails'
-gem 'puma'
 
 # Frontend
-gem 'sass-rails', '~> 5.0.0.beta1'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
 gem 'haml'
-gem 'bootstrap-sass'
-gem 'bh', '~> 1.0'
+gem 'bootstrap-sass', '~> 3.3.4'
+gem 'bh', '~> 1.3'
 gem 'font-awesome-rails'
 
 # Console
@@ -35,19 +29,22 @@ group :development do
   gem 'guard-migrate'
   gem 'terminal-notifier'
   gem 'terminal-notifier-guard'
+
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-  gem 'web-console', '~> 2.0.0.beta2'
-  gem 'spring'
 
-  gem 'rspec-rails', '>= 3.1.0'
-  gem 'factory_girl_rails'
-  gem 'shoulda-matchers'
+  gem 'spring'
+  gem 'rspec-rails'
+  gem 'rubocop', '0.24.1'
 end
 
 group :test do
-  gem 'simplecov', require: false
+  gem 'factory_girl_rails'
+  gem 'should_not'
+  gem 'shoulda-matchers'
+  gem 'simplecov'
 end

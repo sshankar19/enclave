@@ -1,8 +1,0 @@
----
-- name: Installing Redis
-  apt: name=redis-server state=latest update_cache=yes force=yes
-- name: Updating Redis Configuration file
-  lineinfile: dest=/etc/redis/redis.conf regexp='^bind\s+127\.0\.0\.1' line='# bind 127.0.0.1'
-  notify:
-    - restart redis-server
-
