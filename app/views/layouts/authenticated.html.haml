@@ -24,11 +24,13 @@
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li.active
-              %a.active{ href: '#' }
+              = link_to root_path, class: 'active' do
                 Discussions
                 %span.sr-only (current)
             %li
               %a{ href: '#' } Categories
+            %li
+              = link_to 'Member Directory', members_path
             %li
               %a{ href: '#' } Search
 

@@ -18,6 +18,10 @@ RSpec.describe Member, type: :model do
     it { should have_db_column(:email).of_type(:string) }
   end
 
+  describe '#role' do
+    it { should have_db_column(:role).of_type(:string) }
+  end
+
   describe '#full_name' do
     with :member
     subject { member.full_name }

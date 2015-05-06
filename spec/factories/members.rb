@@ -5,5 +5,6 @@ FactoryGirl.define do
     handle { SecureRandom.hex(12) }
     email { "#{SecureRandom.hex(12)}@example.com" }
     password '12345678'
+    role 'member'
   end
 end

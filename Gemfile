@@ -6,6 +6,7 @@ gem 'sqlite3'
 gem 'devise'
 gem 'dotenv-rails'
 gem 'pry-rails'
+gem 'enumerize'
 
 # Frontend
 gem 'sass-rails', '~> 5.0'

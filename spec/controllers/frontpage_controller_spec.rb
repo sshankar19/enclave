@@ -13,7 +13,7 @@ describe FrontpageController, type: :controller do
       it { should render_template "layouts/authenticated" }
       it { should render_template :index }
     end
-    
+
     context 'without a signed-in user' do
       before do
         get :index
