@@ -1,0 +1,2 @@
+class MembersController < AuthenticatedController
+end

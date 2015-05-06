@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe PublicController, type: :controller do
+describe FrontpageController, type: :controller do
   describe "GET :welcome" do
     before { get :welcome }
 

@@ -1,0 +1,2 @@
+class FrontpageController < AuthenticatedController
+end
