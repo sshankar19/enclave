@@ -45,6 +45,7 @@ end
 
 group :test do
   gem 'factory_girl_rails'
+  gem 'factory_girl_rspec'
   gem 'should_not'
   gem 'shoulda-matchers'
   gem 'simplecov'
