@@ -32,16 +32,6 @@ end
 #   watch(%r{^spec/javascripts/.+.js})
 # end
 
-# guard :sheller, command: './bin/restart' do
-#   watch('.env')
-#   watch('.ruby-version')
-#   watch('Gemfile.lock')
-#   watch('config/application.rb')
-#   watch('config/environment.rb')
-#   watch(%r{^config/environments/.*\.rb$})
-#   watch(%r{^config/initializers/.*\.rb$})
-# end
-
 # guard 'jasmine-rails', all_on_start: false do
 #   watch(%r{spec/javascripts/helpers/.+\.(js|coffee)})
 #   watch(%r{spec/javascripts/.+_spec\.(js\.coffee|js|coffee)$})
