@@ -12,6 +12,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
 gem 'haml'
 gem 'bootstrap-sass', '~> 3.3.4'
+gem 'bootswatch-rails'
 gem 'bh', '~> 1.3'
 gem 'font-awesome-rails'
 
