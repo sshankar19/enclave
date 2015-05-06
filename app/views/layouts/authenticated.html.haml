@@ -49,6 +49,8 @@
                   = link_to 'Log Out', destroy_member_session_path, method: :delete
 
     .container
+      - flash.each do |type, message|
+        = alert_box message, context: flash_context(type), dismissible: true unless message.blank?
       = yield
 
     %footer.footer

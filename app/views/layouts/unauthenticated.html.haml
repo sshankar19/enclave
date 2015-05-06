@@ -11,6 +11,8 @@
     = csrf_meta_tags
   %body.unauthenticated
     .container
+      - flash.each do |type, message|
+        = alert_box message, context: flash_context(type), dismissible: true unless message.blank?
       = yield
     - # Most JS Stuff needs to be at the bottom of the body.
     - #
