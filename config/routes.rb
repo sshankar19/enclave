@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :comments
+  resources :discussions
   devise_for :members
   resources :members, only: [:index, :show]
 

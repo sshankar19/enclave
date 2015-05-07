@@ -11,7 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150506055426) do
+ActiveRecord::Schema.define(version: 20150510210449) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",           null: false
+    t.integer  "discussions_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "categories", ["name"], name: "index_categories_on_name", unique: true, using: :btree
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "discussion_id"
+    t.integer  "author_id",     null: false
+    t.string   "format",        null: false
+    t.text     "body",          null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "discussions", force: :cascade do |t|
+    t.integer  "author_id"
+    t.string   "title",                       null: false
+    t.boolean  "active",      default: true,  null: false
+    t.boolean  "closed",      default: false, null: false
+    t.boolean  "sticky",      default: false, null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "category_id"
+  end
 
   create_table "members", force: :cascade do |t|
     t.string   "handle",                              null: false
@@ -32,7 +64,7 @@ ActiveRecord::Schema.define(version: 20150506055426) do
     t.string   "role"
   end
 
-  add_index "members", ["email"], name: "index_members_on_email", unique: true
-  add_index "members", ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
+  add_index "members", ["email"], name: "index_members_on_email", unique: true, using: :btree
+  add_index "members", ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true, using: :btree
 
 end

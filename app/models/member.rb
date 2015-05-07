@@ -1,11 +1,14 @@
 class Member < ActiveRecord::Base
+  extend Enumerize
+  has_many :discussions, foreign_key: :author_id
+  has_many :comments, foreign_key: :author_id
   ROLES = [
     :applicant,
     :member,
     :dude,
     :admin
   ]
-  extend Enumerize
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
@@ -13,7 +16,7 @@ class Member < ActiveRecord::Base
   enumerize :role, in: ROLES, default: :applicant
 
   scope :applicants, -> { where(role: 'applicant') }
-  default_scope { where("role <> 'applicant'") }
+  scope :active, -> { where("role <> 'applicant'") }
 
   def full_name
     "#{first_name} #{last_name}"

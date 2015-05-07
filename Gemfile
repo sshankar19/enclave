@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # Backend
 gem 'rails', '4.2.1'
-gem 'sqlite3'
+gem 'pg'
 gem 'devise'
 gem 'dotenv-rails'
 gem 'pry-rails'
@@ -16,6 +16,7 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem 'bootswatch-rails'
 gem 'bh', '~> 1.3'
 gem 'font-awesome-rails'
+gem 'redcarpet'
 
 # Console
 gem 'rails-console-tweaks'

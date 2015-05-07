@@ -1,4 +1,10 @@
 .row
   .col-md-12
     %h1
-      Placeholder!
+      Discussions
+.row
+  .col-md-12
+    - @discussions.each do |discussion|
+      %section
+        %h2
+          = link_to discussion.title, discussion_path(discussion)

@@ -1,0 +1,16 @@
+= form_for @discussion do |f|
+  .form-group
+    = f.label :category, 'Select the category for this discussion'
+    = f.collection_select(:category_id, Category.all, :id, :name, {}, { class: 'form-control'} )
+
+  .form-group
+    = f.label :title, 'Enter your discussion topic'
+    = f.text_field :title, class: 'form-control'
+
+  = f.fields_for :comments do |cf|
+    .form-group
+      = cf.label :body, 'Enter your comments'
+      = cf.text_area :body, class: 'form-control'
+
+  .form-group
+    = f.submit 'Start Your Discussion', class: 'btn btn-primary'

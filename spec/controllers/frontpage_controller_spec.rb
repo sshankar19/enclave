@@ -3,7 +3,7 @@ require 'rails_helper'
 describe FrontpageController, type: :controller do
   describe "GET :index" do
     context 'with a signed-in user' do
-      let(:member) { FactoryGirl.create :member }
+      with :member
       before do
         sign_in member
         get :index

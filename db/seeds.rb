@@ -1,4 +1,6 @@
-Member.delete_all
+[Member, Discussion, Comment, Category].each do |model|
+  model.delete_all
+end
 
 def create_member(opts = {})
   attributes = opts.reverse_merge(
@@ -46,3 +48,27 @@ create_member(
   email: 'stranger@example.com',
   role: :applicant
 )
+
+# Categories
+[
+  'General',
+  'Announcements',
+  'Shamless Self Promotion',
+  'Art, Literature, and Entertainment',
+  'Best of the Forums',
+  'Big Steer',
+  'Category 5 Fouls',
+  'Computing',
+  'Dungeons and Dragons',
+  'Food and Drink',
+  'Fucking Horrifying',
+  'Hi-larious',
+  'Kids and Parenting',
+  'Language',
+  'Math, Science, and Medicine',
+  'Politics and Governance',
+  'Puzzles',
+  'Sports'
+].each do |category_name|
+  Category.create(name: category_name)
+end

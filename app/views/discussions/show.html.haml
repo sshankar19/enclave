@@ -1,0 +1,16 @@
+.row
+  .col-md-12
+    %h1
+      = @discussion.title
+    - @discussion.comments.each do |comment|
+      = comment.formatted_body
+
+    .panel.panel-default
+      = form_for(@discussion.comments.build) do |f|
+        = f.hidden_field :discussion_id
+        = f.hidden_field :format
+        .form-group
+          = f.label :body, 'Enter your comments'
+          = f.text_area :body, class: 'form-control'
+        .form-group
+          = f.submit 'Add your comments', class: 'btn btn-primary'

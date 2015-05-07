@@ -2,6 +2,10 @@ require 'rails_helper'
 
 # TODO: better specs for this
 RSpec.describe Member, type: :model do
+  describe '#discussions' do
+    it { should have_many :discussions }
+  end
+
   describe '#first_name' do
     it { should have_db_column(:first_name).of_type(:string) }
   end
